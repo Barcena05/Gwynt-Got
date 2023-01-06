@@ -1,0 +1,39 @@
+﻿<Project Sdk="Godot.NET.Sdk/3.3.0">
+  <PropertyGroup>
+    <ProjectGuid>{49A005FB-BF74-4671-83A8-5831C1238674}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BattleCard</RootNamespace>
+    <AssemblyName>Battle-Card</AssemblyName>
+    <TargetFramework>net472</TargetFramework>
+    <!--The following properties were overridden during migration to prevent errors.
+    Enabling them may require other manual changes to the project and its files.-->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="data\src\Engine\CardBase.cs" />
+    <Compile Include="data\src\Engine\GameHUD.cs" />
+    <Compile Include="data\src\Engine\Main.cs" />
+    <Compile Include="data\src\Engine\Manage.cs" />
+    <Compile Include="data\src\Engine\Menu.cs" />
+    <Compile Include="data\src\Library\ArithmeticExpressions.cs" />
+    <Compile Include="data\src\Library\AST_Root.cs" />
+    <Compile Include="data\src\Library\BooleanExpresion.cs" />
+    <Compile Include="data\src\Library\Cards.cs" />
+    <Compile Include="data\src\Library\Compiler.cs" />
+    <Compile Include="data\src\Library\Errors.cs" />
+    <Compile Include="data\src\Library\Expressions.cs" />
+    <Compile Include="data\src\Library\Parser.cs" />
+    <Compile Include="data\src\Library\Power.cs" />
+    <Compile Include="data\src\Library\PowerData.cs" />
+    <Compile Include="data\src\Library\SpacePosition.cs" />
+    <Compile Include="data\src\Library\Token.cs" />
+    <Compile Include="data\src\Library\Tokenizer.cs" />
+    <Compile Include="data\src\Library\TokenStream.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+</Project>

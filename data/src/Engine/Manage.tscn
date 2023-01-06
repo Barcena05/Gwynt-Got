@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://data/src/Engine/Manage.cs" type="Script" id=1]
+[ext_resource path="res://data/textures/0d6064d7-6720-4aba-9efa-7ab439ad32ca.png" type="Texture" id=2]
+[ext_resource path="res://data/font/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="Manage" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 959.981, 539.992 )
+scale = Vector2( 0.999978, 0.899993 )
+texture = ExtResource( 2 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 101.0
+margin_top = 75.0
+margin_right = 1236.0
+margin_bottom = 774.0
+custom_fonts/font = SubResource( 1 )
+show_line_numbers = true
+
+[node name="NameList" type="TextEdit" parent="."]
+margin_left = 1359.0
+margin_top = 55.0
+margin_right = 1830.0
+margin_bottom = 940.0
+custom_fonts/font = SubResource( 1 )
+show_line_numbers = true
+
+[node name="Name" type="TextEdit" parent="."]
+margin_left = 644.0
+margin_top = 970.0
+margin_right = 1005.0
+margin_bottom = 1036.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 693.0
+margin_top = 885.0
+margin_right = 946.0
+margin_bottom = 958.0
+custom_fonts/font = SubResource( 3 )
+text = "Menu"
+
+[node name="SaveButton" type="Button" parent="."]
+margin_left = 73.0
+margin_top = 900.0
+margin_right = 286.0
+margin_bottom = 1007.0
+custom_fonts/font = SubResource( 3 )
+text = "Save"
+
+[node name="OpenButton" type="Button" parent="."]
+margin_left = 386.0
+margin_top = 900.0
+margin_right = 601.0
+margin_bottom = 1009.0
+custom_fonts/font = SubResource( 4 )
+text = "Open"
+
+[node name="DeleteButton" type="Button" parent="."]
+margin_left = 1044.0
+margin_top = 901.0
+margin_right = 1255.0
+margin_bottom = 1003.0
+custom_fonts/font = SubResource( 5 )
+text = "Delete"
+
+[node name="Band" type="Button" parent="."]
+margin_left = 1360.0
+margin_top = 938.0
+margin_right = 1828.0
+margin_bottom = 1011.0
+custom_fonts/font = SubResource( 6 )
+text = "Daenerys"
+
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="OpenButton" to="." method="_on_OpenButton_pressed"]
+[connection signal="pressed" from="DeleteButton" to="." method="_on_DeleteButton_pressed"]
+[connection signal="pressed" from="Band" to="." method="_on_Band_pressed"]
