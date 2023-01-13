@@ -2,6 +2,8 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+// La clase Compiler posee una propiedad publica Lexical que devuelve un objeto de tipo Tokenizer en el cual estaran registrados
+// Todos los operadores y palabras claves definidas en nuestro lenguaje
 public class Compiler
 {
     private static Tokenizer tokenizer;
@@ -31,6 +33,7 @@ public class Compiler
                 tokenizer.RegisterOperator("Compare", TokenValues.binarycomparer);
                 tokenizer.RegisterOperator("True", TokenValues.truepredicate);
                 tokenizer.RegisterOperator("False", TokenValues.falsepredicate);
+                tokenizer.RegisterOperator("ExistCardIn", TokenValues.existcardin);
 
                 tokenizer.RegisterOperator(",", TokenValues.ValueSeparator);
                 tokenizer.RegisterOperator(";", TokenValues.StatementSeparator);
@@ -46,14 +49,7 @@ public class Compiler
                 tokenizer.RegisterKeyword("Card", TokenValues.card);
                 tokenizer.RegisterKeyword("UnitCard", TokenValues.unitcard);
                 tokenizer.RegisterKeyword("LeaderCard", TokenValues.leadercard);
-                tokenizer.RegisterKeyword("EffectCard", TokenValues.effectcard);
-                tokenizer.RegisterKeyword("Name", TokenValues.name);
-                tokenizer.RegisterKeyword("Attack", TokenValues.attack);
-                tokenizer.RegisterKeyword("Power", TokenValues.power);
-                tokenizer.RegisterKeyword("Position", TokenValues.position);
-                tokenizer.RegisterKeyword("Phrase", TokenValues.phrase);
-                tokenizer.RegisterKeyword("Path", TokenValues.path);
-                tokenizer.RegisterKeyword("Type", TokenValues.type);
+                tokenizer.RegisterKeyword("EffectCard", TokenValues.effectcard);               
                 tokenizer.RegisterKeyword("Melee", TokenValues.melee);
                 tokenizer.RegisterKeyword("Middle", TokenValues.middle);
                 tokenizer.RegisterKeyword("Siege", TokenValues.siege);
@@ -84,9 +80,18 @@ public class Compiler
                 tokenizer.RegisterKeyword("EnemyGraveryard", TokenValues.enemygraveryard);
                 tokenizer.RegisterKeyword("EnemyDeck", TokenValues.enemydeck);
                 tokenizer.RegisterKeyword("AllExistingCards", TokenValues.allexistingcards);
-                tokenizer.RegisterKeyword("SwitchBand", TokenValues.switchband);
-                tokenizer.RegisterKeyword("ExistCardIn", TokenValues.existcardin);
+                tokenizer.RegisterKeyword("SwitchBand", TokenValues.switchband);                
                 tokenizer.RegisterKeyword("FreeElection", TokenValues.freeelection);
+                tokenizer.RegisterProperty("Name", TokenValues.name);
+                tokenizer.RegisterProperty("Attack", TokenValues.attack);                
+                tokenizer.RegisterProperty("Position", TokenValues.position);
+                tokenizer.RegisterProperty("Phrase", TokenValues.phrase);
+                tokenizer.RegisterProperty("Path", TokenValues.path);
+                tokenizer.RegisterProperty("PowerSet", TokenValues.powerset);
+                tokenizer.RegisterKeyword("Power", TokenValues.power);
+                tokenizer.RegisterKeyword("Number", TokenValues.arithmeticexpression);
+                tokenizer.RegisterKeyword("Bool", TokenValues.booleanexpression);
+                tokenizer.RegisterKeyword("Text", TokenValues.textexpression);
                 /*  */
                 tokenizer.RegisterText("\"", "\"");
             }

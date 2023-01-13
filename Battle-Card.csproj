@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Godot.NET.Sdk/3.3.0">
   <PropertyGroup>
-    <ProjectGuid>{49A005FB-BF74-4671-83A8-5831C1238674}</ProjectGuid>
+    <ProjectGuid>{010D7CCC-47C7-48BA-98DE-695DABC4CF94}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>BattleCard</RootNamespace>
     <AssemblyName>Battle-Card</AssemblyName>

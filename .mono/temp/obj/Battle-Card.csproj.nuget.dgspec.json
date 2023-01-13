@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/ernestobarcena/Documentos/Gwynt-Got/Battle-Card.csproj": {}
+  },
+  "projects": {
+    "/home/ernestobarcena/Documentos/Gwynt-Got/Battle-Card.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/ernestobarcena/Documentos/Gwynt-Got/Battle-Card.csproj",
+        "projectName": "Battle-Card",
+        "projectPath": "/home/ernestobarcena/Documentos/Gwynt-Got/Battle-Card.csproj",
+        "packagesPath": "/home/ernestobarcena/.nuget/packages/",
+        "outputPath": "/home/ernestobarcena/Documentos/Gwynt-Got/.mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ernestobarcena/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/6.0.105/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

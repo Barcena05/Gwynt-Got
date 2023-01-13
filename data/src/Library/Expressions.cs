@@ -8,6 +8,20 @@ public abstract class Expressions : AST_Root
     public abstract object Value { get; set; }
     public abstract ExpressionType Type { get; set; }
 }
+public class TextExpression: Expressions
+{
+    public override object Value {get; set;}
+    public override void Evaluate()
+    {
+        
+    }
+    public override ExpressionType Type{get => ExpressionType.text; set=> this.Type = ExpressionType.text;}
+    public TextExpression(string content)
+    {
+        this.Value = content;
+    }
+
+}
 // El enum ExpressionType agrupa los diferentes tipos de expresiones, los cuales pueden ser: numero,
 // texto o booleano.
 public enum ExpressionType
@@ -16,4 +30,5 @@ public enum ExpressionType
     text,
     boolean,
     errorType,
+    power,
 }

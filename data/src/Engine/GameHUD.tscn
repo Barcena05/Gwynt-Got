@@ -1,13 +1,13 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://data/src/Engine/GameHUD.cs" type="Script" id=1]
 [ext_resource path="res://data/src/Engine/CardBase.tscn" type="PackedScene" id=2]
 [ext_resource path="res://data/textures/board/board.png" type="Texture" id=3]
 [ext_resource path="res://data/font/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://data/textures/cards/band0/backDaenerys.jpg" type="Texture" id=5]
-[ext_resource path="res://data/textures/board/runes0.png" type="Texture" id=6]
-[ext_resource path="res://data/textures/board/runes2.png" type="Texture" id=7]
-[ext_resource path="res://data/textures/board/runes1.png" type="Texture" id=8]
+[ext_resource path="res://data/textures/board/runes2.png" type="Texture" id=6]
+[ext_resource path="res://data/textures/board/runes1.png" type="Texture" id=7]
+[ext_resource path="res://data/textures/board/runes0.png" type="Texture" id=8]
 [ext_resource path="res://data/textures/cards/band0/Daenerys.jpg" type="Texture" id=9]
 [ext_resource path="res://data/textures/cards/band1/JonSnow.jpg" type="Texture" id=10]
 [ext_resource path="res://data/textures/board/VictorySign.jpg" type="Texture" id=11]
@@ -33,17 +33,17 @@ font_data = ExtResource( 4 )
 animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "2",
+"name": "0",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "0",
+"name": "1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "1",
+"name": "2",
 "speed": 5.0
 } ]
 
@@ -63,11 +63,32 @@ font_data = ExtResource( 4 )
 size = 80
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=9]
+size = 50
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 100
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 50
+font_data = ExtResource( 4 )
+
 [node name="GameHUD" type="Node2D"]
 script = ExtResource( 1 )
 CardScene = ExtResource( 2 )
 
 [node name="BackGround" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 1005.39, 539.586 )
 scale = Vector2( 1.07073, 0.935698 )
 texture = ExtResource( 3 )
@@ -317,11 +338,11 @@ position = Vector2( 1600, 455 )
 scale = Vector2( 1.26278, 1.10444 )
 
 [node name="PlayerGrave0" type="Position2D" parent="."]
-position = Vector2( 1670, 600 )
+position = Vector2( 50, 700 )
 scale = Vector2( 1.26278, 1.10444 )
 
 [node name="PlayerGrave1" type="Position2D" parent="."]
-position = Vector2( 1750, 600 )
+position = Vector2( 150, 700 )
 scale = Vector2( 1.26278, 1.10444 )
 
 [node name="PlayerLeader0" type="Position2D" parent="."]
@@ -357,11 +378,11 @@ position = Vector2( 1600, 30 )
 scale = Vector2( 1.26278, 1.10444 )
 
 [node name="EnemyGrave0" type="Position2D" parent="."]
-position = Vector2( 1670, 300 )
+position = Vector2( 50, 250 )
 scale = Vector2( 1.26278, 1.10444 )
 
 [node name="EnemyGrave1" type="Position2D" parent="."]
-position = Vector2( 1750, 300 )
+position = Vector2( 150, 250 )
 scale = Vector2( 1.26278, 1.10444 )
 
 [node name="EnemyLeader0" type="Position2D" parent="."]
@@ -373,10 +394,16 @@ position = Vector2( 230, 70 )
 scale = Vector2( 1.26278, 1.10444 )
 
 [node name="CardSelection0" type="Position2D" parent="."]
-position = Vector2( 450, 720 )
+position = Vector2( 600, 720 )
 
 [node name="CardSelection1" type="Position2D" parent="."]
 position = Vector2( 1600, 720 )
+
+[node name="PlayerHand0" type="Position2D" parent="."]
+position = Vector2( 500, -65 )
+
+[node name="PlayerHand1" type="Position2D" parent="."]
+position = Vector2( 1600, -65 )
 
 [node name="Cards" type="Node2D" parent="."]
 
@@ -409,6 +436,7 @@ texture_normal = ExtResource( 10 )
 expand = true
 
 [node name="DisplayInfo" type="Sprite" parent="."]
+editor/display_folded = true
 visible = false
 position = Vector2( 1028.97, 528.033 )
 texture = ExtResource( 11 )
@@ -472,10 +500,6 @@ text = "asdasd"
 align = 1
 valign = 1
 
-[node name="HideInfoTimer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
 [node name="ChangeEnemyTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
@@ -512,20 +536,63 @@ margin_bottom = 565.826
 
 [node name="ShowCard" type="Node2D" parent="."]
 
-[node name="Card" parent="ShowCard" instance=ExtResource( 2 )]
-margin_left = 1633.0
-margin_top = 356.0
-margin_right = 1899.0
-margin_bottom = 715.0
+[node name="Card" type="MarginContainer" parent="ShowCard"]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="BackGround" parent="ShowCard/Card" index="0"]
-position = Vector2( 137.907, 173.18 )
-scale = Vector2( 0.410965, 0.343948 )
+[node name="BackGround" type="Sprite" parent="ShowCard/Card"]
+position = Vector2( 1771.05, 534.83 )
+scale = Vector2( 0.438511, 0.381564 )
 texture = ExtResource( 16 )
 
-[node name="ActionButton" parent="ShowCard/Card" index="1"]
-margin_right = 266.0
-margin_bottom = 359.0
+[node name="PhotoMark" type="MarginContainer" parent="ShowCard/Card/BackGround"]
+margin_left = -297.0
+margin_top = -559.0
+margin_right = 300.0
+margin_bottom = 108.0
+
+[node name="Photo" type="Sprite" parent="ShowCard/Card/BackGround/PhotoMark"]
+position = Vector2( 298, 333 )
+
+[node name="Name" type="Label" parent="ShowCard/Card/BackGround"]
+margin_left = -292.0
+margin_top = 19.0
+margin_right = 289.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 9 )
+align = 1
+valign = 1
+
+[node name="Phrase" type="RichTextLabel" parent="ShowCard/Card/BackGround"]
+margin_left = -295.0
+margin_top = 189.0
+margin_right = 295.0
+margin_bottom = 500.0
+custom_fonts/normal_font = SubResource( 10 )
+
+[node name="Attack" type="Label" parent="ShowCard/Card/BackGround"]
+margin_left = -281.96
+margin_top = -546.377
+margin_right = -167.96
+margin_bottom = -449.377
+custom_fonts/font = SubResource( 11 )
+
+[node name="Place" type="Label" parent="ShowCard/Card/BackGround"]
+margin_left = -290.0
+margin_top = 125.0
+margin_right = 291.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 12 )
+align = 1
+
+[node name="Power" type="Label" parent="ShowCard/Card/BackGround"]
+margin_left = -285.884
+margin_top = 503.443
+margin_right = 295.116
+margin_bottom = 564.443
+custom_fonts/font = SubResource( 12 )
+align = 1
+valign = 2
 
 [connection signal="pressed" from="BackGround/PassButton" to="." method="_on_PassButton_pressed"]
 [connection signal="pressed" from="BackGround/ExitButton" to="." method="_on_ExitButton_pressed"]
@@ -533,10 +600,7 @@ margin_bottom = 359.0
 [connection signal="pressed" from="DeckSelection/Band1Button" to="." method="_on_Band1Button_pressed"]
 [connection signal="pressed" from="DisplayInfo/NextButton" to="." method="_on_NextButton_pressed"]
 [connection signal="pressed" from="DisplayInfo/GiveUpButton" to="." method="_on_GiveUpButton_pressed"]
-[connection signal="timeout" from="HideInfoTimer" to="." method="_on_HideInfoTimer_timeout"]
 [connection signal="timeout" from="ChangeEnemyTimer" to="." method="_on_ChangeEnemyTimer_timeout"]
 [connection signal="pressed" from="SiegeSupport" to="." method="_on_SiegeSupport_pressed"]
 [connection signal="pressed" from="MiddleSupport" to="." method="_on_MiddleSupport_pressed"]
 [connection signal="pressed" from="MeleeSupport" to="." method="_on_MeleeSupport_pressed"]
-
-[editable path="ShowCard/Card"]

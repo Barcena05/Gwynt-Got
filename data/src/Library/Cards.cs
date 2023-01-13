@@ -11,8 +11,10 @@ public abstract class Cards : AST_Root
     public abstract string name { get; protected set; }
     public abstract string type { get; protected set; }
     public abstract string imagePath { get; protected set; }
-    public abstract Power power { get; protected set; }
+    public abstract List<Power> powers { get; protected set; }
     public abstract string band {get; set;}
+    public abstract int identifier{get; set;}
+    public enum location {Melee, Middle, Siege, Climate, Support}
 
 }
 public class UnitCard : Cards
@@ -21,16 +23,17 @@ public class UnitCard : Cards
     public override string type { get; protected set; }
     public override string imagePath { get; protected set; }
     public override string band { get; set; }
-    public override Power power { get; protected set; }
+    public override int identifier { get; set; }
+    public override List<Power> powers { get; protected set; }
     public string phrase { get; protected set; }
-    public string position { get; protected set; }
-    public int damage { get; protected set; }
-    public UnitCard(string Name, string Type, string ImagePath, Power Power, string Phrase, string Position, int Damage)
+    public location position { get; set; }
+    public ArithmeticExpressions damage { get; protected set; }
+    public UnitCard(string Name, string Type, string ImagePath, List<Power> Powers, string Phrase, location Position , ArithmeticExpressions Damage)
     {
         this.name = Name;
         this.type = Type;
         this.imagePath = ImagePath;
-        this.power = Power;
+        this.powers = Powers;
         this.phrase = Phrase;
         this.position = Position;
         this.damage = Damage;
@@ -42,14 +45,15 @@ public class LeaderCard : Cards
     public override string type { get; protected set; }
     public override string imagePath { get; protected set; }
     public override string band { get; set; }
-    public override Power power { get; protected set; }
+    public override List<Power> powers { get; protected set; }
     public string phrase { get; protected set; }
-    public LeaderCard(string Name, string Type, string ImagePath, Power Power, string Phrase)
+    public override int identifier { get; set; }
+    public LeaderCard(string Name, string Type, string ImagePath, List<Power> Powers, string Phrase)
     {
         this.name = Name;
         this.type = Type;
         this.imagePath = ImagePath;
-        this.power = Power;
+        this.powers = Powers;
         this.phrase = Phrase;
     }
 }
@@ -59,14 +63,15 @@ public class EffectCard : Cards
     public override string type { get; protected set; }
     public override string imagePath { get; protected set; }
     public override string band { get; set; }
-    public override Power power { get; protected set; }
-    public string position { get; protected set; }
-    public EffectCard(string Name, string Type, string ImagePath, Power Power, string Position)
+    public override List<Power> powers { get; protected set; }
+    public location position { get; set; }
+    public override int identifier { get; set; }
+    public EffectCard(string Name, string Type, string ImagePath, List<Power> Powers, location Position)
     {
         this.name = Name;
         this.type = Type;
         this.imagePath = ImagePath;
-        this.power = Power;
+        this.powers = Powers;
         this.position = Position;
     }
 }

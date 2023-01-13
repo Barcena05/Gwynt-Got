@@ -13,10 +13,10 @@ public class Main : Node
 	//CardSignal lo que hace es pasar los datos de la carta que la llamo a variables globales que
 	//hay en gamehud, permitiendo que cuando gamehud detecte el true, mueva la carta desde donde se indica con
 	//from, hacia donde se indica con to.
-	public static void CardSignal(int from, int to, string name){
+	public static void CardSignal(SpacePosition.location from, SpacePosition.location to, int identifier){
 		GameHUD.currentFrom = from;
 		GameHUD.currentTo = to;
-		GameHUD.currentName = name;
+		GameHUD.n = identifier;
 		move = true;
 		
 	}

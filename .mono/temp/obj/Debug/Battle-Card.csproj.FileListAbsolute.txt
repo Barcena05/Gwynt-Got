@@ -1,0 +1,7 @@
+/home/ernestobarcena/Documentos/Gwynt-Got/.mono/temp/bin/Debug/Battle-Card.dll
+/home/ernestobarcena/Documentos/Gwynt-Got/.mono/temp/bin/Debug/Battle-Card.pdb
+/home/ernestobarcena/Documentos/Gwynt-Got/.mono/temp/obj/Debug/Battle-Card.csproj.AssemblyReference.cache
+/home/ernestobarcena/Documentos/Gwynt-Got/.mono/temp/obj/Debug/Battle-Card.GeneratedMSBuildEditorConfig.editorconfig
+/home/ernestobarcena/Documentos/Gwynt-Got/.mono/temp/obj/Debug/Battle-Card.csproj.CoreCompileInputs.cache
+/home/ernestobarcena/Documentos/Gwynt-Got/.mono/temp/obj/Debug/Battle-Card.dll
+/home/ernestobarcena/Documentos/Gwynt-Got/.mono/temp/obj/Debug/Battle-Card.pdb

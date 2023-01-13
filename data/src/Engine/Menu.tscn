@@ -14,7 +14,7 @@ font_data = ExtResource( 3 )
 script = ExtResource( 1 )
 
 [node name="BackGround" type="Sprite" parent="."]
-position = Vector2( 964.171, 597.858 )
+position = Vector2( 959.978, 539.978 )
 scale = Vector2( 0.673663, 0.547898 )
 texture = ExtResource( 2 )
 

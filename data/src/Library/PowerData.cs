@@ -28,12 +28,13 @@ public class RebornPower : PowerData
     public override bool processing { get; set; }
     public override bool started { get; set; }
     public override int cardsCounter { get; set; }
-    public int place;
+    public SpacePosition.location place;
     public bool select;
     public List<string> names;
+    public List<int> identifier;
 
 
-    public RebornPower(int place, bool select, List<string> names, int cardsCounter)
+    public RebornPower(SpacePosition.location place, bool select, List<string> names, int cardsCounter)
     {
         this.started = false;
         this.name = "reborn";
@@ -91,11 +92,11 @@ public class DestroyPower : PowerData
     public override bool started { get; set; }
     public override int cardsCounter { get; set; }
     public int identifier;
-    public int from;
+    public SpacePosition.location from;
     public List<string> names;
 
 
-    public DestroyPower(int identifier, int from, List<string> names, int cardsCounter)
+    public DestroyPower(int identifier, SpacePosition.location from, List<string> names, int cardsCounter)
     {
         this.started = false;
         this.name = "destroy";
@@ -112,12 +113,12 @@ public class ModifyAttackPower : PowerData
     public override bool processing { get; set; }
     public override bool started { get; set; }
     public override int cardsCounter { get; set; }
-    public int where;
+    public SpacePosition.location where;
     public int ammount;
     public int identifier;
     public List<string> names;
 
-    public ModifyAttackPower(int where, int ammount, int identifier, int cardsCounter, List<string> names)
+    public ModifyAttackPower(SpacePosition.location where, int ammount, int identifier, int cardsCounter, List<string> names)
     {
         this.name = "modifyAttack";
         this.processing = true;
@@ -146,4 +147,3 @@ public class DrawPower : PowerData
         this.cardsCounter = cardsCounter;
     }
 }
-

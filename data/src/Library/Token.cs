@@ -2,6 +2,9 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+// La clase Token representa un objeto el cual posee tres propiedades, un valor, un TokenType y un CodeLocation.
+// El TokenType representa el tipo que posee el token y el CodeLocation representa la posicion del token en el codigo, lo que facilita
+// la deteccion de errores.
 public class Token
 {
     public string Value { get; private set; }
@@ -14,6 +17,8 @@ public class Token
         this.Location = location;
     }
 }
+// El enum TokenType define los tipos de Token que pueden existir. En escencia los tokens pueden ser: numeros, texto, palabras clave,
+// identificadores o simbolos.
 public enum TokenType
 {
     number,
@@ -21,7 +26,11 @@ public enum TokenType
     keyword,
     identifier,
     symbols,
+    properties,
 }
+// La clase TokenValues define una gran variedad de constantes que representan los posibles valores asociados a cada Token definido
+// en nuestro lenguaje. Esto hace mucho mas comodo y eficiente el proceso de identificacion de los tokens, siempre y cuando se respete
+// el uso exclusivo de estas constantes como valores de los tokens que creemos.
 public class TokenValues
 {
     //Arithmetic operators
@@ -51,7 +60,9 @@ public class TokenValues
     public const string OpenCurlyBrackets = "OpenCurlyBrackets"; // {
     public const string ClosedCurlyBrackets = "ClosedCurlyBrackets"; // }
                                                                      //Keywords
-    public const string identifier = "ID"; // id
+    public const string arithmeticexpression = "ArithmeticExpression";
+    public const string booleanexpression = "BooleanExpression";
+    public const string textexpression = "TextExpression";
     public const string conditionset = "ConditionSet";  //IEnumerable de Condition
     public const string instructionset = "InstructionSet";  //IEnumerable de Instruction
     public const string condition = "Condition";  //Objeto de tipo Condition, es un Boolean Expression
@@ -63,6 +74,7 @@ public class TokenValues
     public const string name = "Name"; //Propiedad de las cartas
     public const string attack = "Attack";   //Propiedad de las cartas, es una Arithmetic Expression
     public const string power = "Power"; //Propiedad de las cartas, es un Power
+    public const string powerset = "PowerSet";
     public const string position = "Position";  //Propiedad de las cartas
     public const string phrase = "Phrase";  //Propiedad de las cartas
     public const string path = "Path";  //Propiedad de las cartas
